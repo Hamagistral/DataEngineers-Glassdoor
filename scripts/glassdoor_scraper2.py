@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 import time
 import pandas as pd
 
-# Glassdoor Job Scraper from page 0 to 20
+# Because Glassdoor stops showing job listing informations avisiting 20 pages, we need to scrape another time starting from page 21 to the end page 30.
 
 def get_jobs(keyword, num_pages, path):
 
@@ -17,7 +17,8 @@ def get_jobs(keyword, num_pages, path):
     driver = webdriver.Chrome(executable_path=path, options=options)
     driver.set_window_size(1120, 1000)
 
-    url = "https://www.glassdoor.com/Job/united-states-"+keyword+"-jobs-SRCH_IL.0,13_IN1_KO14,27.htm?jobType=fulltime"
+    # In the parameter "IP21" in the url makes the link go to the 21st page
+    url = "https://www.glassdoor.com/Job/united-states-"+keyword+"-jobs-SRCH_IL.0,13_IN1_KO14,27_IP21.htm?includeNoSalaryJobs=true&jobType=fulltime"
     driver.get(url)
         
     time.sleep(5)
@@ -166,9 +167,10 @@ def get_jobs(keyword, num_pages, path):
     'company_founded' : company_founded,
     'company_revenue': company_revenue})
     
-    data_path = '../data/raw/'
-    df.to_csv(data_path + "glassdoor-"+keyword+".csv", index=False) 
+    data_path = '../data/raw'
+    df.to_csv(data_path + "glassdoor-"+keyword+"-after20.csv", index=False) 
 
-# Scraping the Glassdoor website beginning from page 0 to 20
+
+# Scraping the Glassdoor website beginning from page 21 to 30
 path = "chromedriver"
-get_jobs('data-engineer', 20, path) 
+get_jobs('data-engineer', 10, path) 
