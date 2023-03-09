@@ -11,11 +11,11 @@
   </div>
   
   <p>Gain insights into the job market for data engineers in the USA</p>
-    <a href="https://jobsglassdoor-dataengineers.streamlit.app/">Live Preview</a>
+    <a href="https://jobsglassdoor-dataengineers.streamlit.app/" target="_blank">Live Preview</a>
     ·
-    <a href="https://www.kaggle.com/datasets/hamzaelbelghiti/data-engineering-jobs-in-the-usa-glassdoor">Data on Kaggle</a>
+    <a href="https://www.kaggle.com/datasets/hamzaelbelghiti/data-engineering-jobs-in-the-usa-glassdoor" target="_blank">Data on Kaggle</a>
     ·
-    <a href="https://github.com/Hamagistral/DataEngineers-Glassdoor/issues">Request Feature</a>
+    <a href="https://github.com/Hamagistral/DataEngineers-Glassdoor/issues" target="_blank">Request Feature</a>
 </div>
 <hr>
 
