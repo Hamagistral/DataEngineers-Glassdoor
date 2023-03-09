@@ -69,7 +69,7 @@ def show_predict_page():
         X[:, 5] = le_rating.transform(X[:,5])
 
         salary = regressor.predict(X)
-        st.subheader(f'The estimated salary is ${salary[0]:.2f}')
+        st.subheader(f'The estimated salary is ${"{:,}".format(round(salary[0]))} /yr')
 
 show_predict_page()
 

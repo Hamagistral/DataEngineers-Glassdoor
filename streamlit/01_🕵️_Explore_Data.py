@@ -4,8 +4,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import altair as alt
 
-st.set_page_config(page_title="Data Exploration & Analysis", page_icon='👨‍💻')
+st.set_page_config(page_title="Exploratory Data Analysis", page_icon='👨‍💻')
 
+# Countplot of tools 
 def filtered_keywords(tools, keywords, head=10):
     # get keywords in a column
     count_keywords = pd.DataFrame(tools.sum()).value_counts().rename_axis('keywords').reset_index(name='counts')
@@ -63,7 +64,7 @@ librairies = ['spark', 'hadoop', 'kafka', 'airflow']
 def show_explore_page():
 
     st.subheader("🕵️ Exploring Glassdoor Data Engineering Jobs")
-    st.write(f":blue[{len(df)} jobs analyzed]")
+    st.write(f":blue[{len(df)} jobs analyzed, March 2023]")
 
     # Data Engineering Skills
     st.markdown("#### 🛠️ Top Skills for Data Engineers")
@@ -89,7 +90,6 @@ def show_explore_page():
     filtered_keywords(data, tools)
 
     # Most in Demand Degrees
-
     st.markdown("#### 🎓 Most in Demand Degrees for Data Engineers")
 
     degree_counts = df['job_education'].value_counts().reset_index()
@@ -133,9 +133,21 @@ def show_explore_page():
 
     st.altair_chart(experience_chart, use_container_width=True)
 
-    # Recruiting Companies
+    # Salary Distribution
+    st.markdown("#### 🤑 Salary Distribution")
 
-    st.markdown("#### 🖥️ Top 10 Companies Recruiting Data Engineers (03/2023)")
+    salary_chart = alt.Chart(df).mark_bar(opacity=0.9, interpolate='step', binSpacing=0.8).encode(
+        x=alt.X('salary_estimate:Q', bin=alt.Bin(maxbins=20), title="Salary Estimate in $"),
+        y=alt.Y('count()', title=None),
+        color=alt.value('#FFA500')
+    ).properties(
+        height=500
+    )
+
+    st.altair_chart(salary_chart, use_container_width=True)
+
+    # Top Recruiting Companies
+    st.markdown("#### 🖥️ Top 10 Companies Recruiting Data Engineers")
 
     top10 = df['company'].value_counts().head(10)
 
@@ -152,8 +164,7 @@ def show_explore_page():
 
     st.altair_chart(companies_chart, use_container_width=True)
 
-    # Company Industries
-
+    # Top Company Industries
     st.markdown("#### 🖥️ Top 10 Company Industries Recruiting Data Engineers")
 
     industry_counts = df['company_industry'].value_counts().reset_index().head(10)
@@ -171,21 +182,7 @@ def show_explore_page():
 
     st.altair_chart(industries_chart, use_container_width=True)
 
-    # Salary Distribution
-
-    st.markdown("#### 🤑 Salary Distribution")
-
-    salary_chart = alt.Chart(df).mark_bar(opacity=0.9, interpolate='step', binSpacing=0.8).encode(
-        x=alt.X('salary_estimate:Q', bin=alt.Bin(maxbins=20), title="Salary Estimate in $"),
-        y=alt.Y('count()', title=None),
-        color=alt.value('#FFA500')
-    ).properties(
-        height=500
-    )
-
-    st.altair_chart(salary_chart, use_container_width=True)
-
-    st.markdown("""### For more data exploration see : [😼 GitHub](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_eda.ipynb)""")
+    st.markdown("""### For more see : [😼 GitHub](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_eda.ipynb)""")
 
 show_explore_page()
 
