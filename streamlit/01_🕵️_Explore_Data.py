@@ -3,6 +3,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import altair as alt
+from pathlib import Path
 
 st.set_page_config(page_title="Exploratory Data Analysis", page_icon='👨‍💻')
 
@@ -36,9 +37,12 @@ def filtered_keywords(tools, keywords, head=10):
 
     st.altair_chart(bar_chart, use_container_width=True)
 
+
 @st.cache_resource
 def load_data():
-    df = pd.read_csv('../data/processed/glassdoor-data-engineer-eda.csv')
+
+    data_path = Path(__file__).parents[1] / 'data/processed/glassdoor-data-engineer-eda.csv'
+    df = pd.read_csv(data_path)
     
     cols = ['job_languages', 'job_cloud', 'job_viz', 'job_databases', 'job_librairies']
 

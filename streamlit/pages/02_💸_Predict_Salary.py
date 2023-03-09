@@ -1,11 +1,13 @@
 import streamlit as st
 import pickle
 import numpy as np
+from pathlib import Path
 
 st.set_page_config(page_title="Predict Salary", page_icon='💸')
 
 def load_model():
-    with open('../models/model_salary_pred.pkl', 'rb') as file:
+    model_path = Path(__file__).parents[2] / 'models/model_salary_pred.pkl'
+    with open(model_path, 'rb') as file:
         data = pickle.load(file)
 
     return data
