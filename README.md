@@ -53,6 +53,7 @@ The salary prediction model is built using a random forest regressor. Finally, t
 
 ## 📨 Contact Me
 
-![https://www.linkedin.com/in/hamza-elbelghiti/](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
-![https://github.com/Hamagistral](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-![hamza.lbelghiti@gmail.com](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
+
+[LinkedIn](https://www.linkedin.com/in/hamza-elbelghiti/) •
+[Github](https://github.com/Hamagistral) •
+[Gmail](hamza.lbelghiti@gmail.com)
