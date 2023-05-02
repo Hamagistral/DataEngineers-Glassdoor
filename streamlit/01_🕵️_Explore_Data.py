@@ -67,8 +67,8 @@ librairies = ['spark', 'hadoop', 'kafka', 'airflow']
 
 def show_explore_page():
 
-    st.subheader("🕵️ Exploring Glassdoor Data Engineering Jobs")
-    st.write(f":blue[{len(df)} jobs analyzed, March 2023]")
+    st.header("🕵️ Exploring Data Engineering Jobs")
+    st.write(f":blue[{len(df)} jobs analyzed from Glassdoor USA, March 2023]")
 
     # Data Engineering Skills
     st.markdown("#### 🛠️ Top Skills for Data Engineers")

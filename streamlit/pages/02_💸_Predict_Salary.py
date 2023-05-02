@@ -22,9 +22,11 @@ le_exp = data["le_exp"]
 le_indu = data["le_indu"]
 le_rating = data["le_rating"]
 
+unique_company_ratings = [1.0, 2.6, 2.7, 2.8, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5.0]
+
 def show_predict_page():
 
-    st.subheader("💸 Data Engineer's Salary Prediction")
+    st.header("💸 Data Engineer's Salary Prediction")
 
     st.write("""#### We need some informations to predict your salary :""")
 
@@ -41,7 +43,6 @@ def show_predict_page():
                 'Beauty & Wellness', 'Accounting & Tax', 'Banking & Lending', 'Consumer Product Manufacturing', 'Internet & Web Services', 
                 'National Agencies', 'Publishing', 'Food & Beverage Manufacturing')
 
-
     state= st.selectbox("State :", states)
 
     education = st.selectbox("Education Level :", degrees)
@@ -50,7 +51,10 @@ def show_predict_page():
 
     industry = st.selectbox("Company Industry :", industries)
 
-    company_rating = st.slider("Company Rating (According to Glassdoor) :", 0.0, 5.0, step=0.1)
+    company_rating = st.slider("Company Rating (According to Glassdoor) :", 0.0, 5.0, step=0.1, value=unique_company_ratings[0])
+
+    # Convert company_rating to numpy array
+    company_rating = np.array([company_rating])
 
     seniority_pos = st.checkbox("Senior Position")
 
@@ -58,6 +62,16 @@ def show_predict_page():
         seniority = "senior"
     else:
         seniority = "na"
+
+    # Check if user input is in unique_company_ratings
+    if company_rating not in unique_company_ratings:
+        # Find closest value in unique_company_ratings
+        closest_value = unique_company_ratings[np.argmin(np.abs(unique_company_ratings - company_rating))]
+        st.warning(f"The company rating of {company_rating[0]} is not found in the data. The company rating will be replaced by {closest_value} which is the closest valid rating.")
+        company_rating = closest_value
+
+    else:
+        st.success(f"The company rating of {company_rating[0]} is valid.")
 
     submit = st.button("Calculate Salary")
 
