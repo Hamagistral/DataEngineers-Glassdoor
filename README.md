@@ -39,9 +39,8 @@ After EDA, feature engineering is performed to create new features that may impr
 
 The salary prediction model is built using a random forest regressor. Finally, the model is deployed in a web application using Streamlit, allowing users to input their own data and receive a salary prediction based on the model.
 
-<hr>
 
-## 🛠️ Technologies Used
+# 🛠️ Technologies Used
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter)
@@ -51,7 +50,7 @@ The salary prediction model is built using a random forest regressor. Finally, t
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
 <img src="https://user-images.githubusercontent.com/66017329/223900076-e1d5c1e5-7c4d-4b73-84e7-ae7d66149bc6.png" alt="Banner" width="100">
 
-## 📨 Contact Me
+# 📨 Contact Me
 
 [LinkedIn](https://www.linkedin.com/in/hamza-elbelghiti/) •
 [Github](https://github.com/Hamagistral) •
