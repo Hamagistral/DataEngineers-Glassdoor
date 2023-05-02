@@ -11,11 +11,11 @@
   </div>
   
   <p>Gain insights into the job market for data engineers in the USA</p>
-    <a href="https://jobsglassdoor-dataengineers.streamlit.app/">Live Preview</a>
+    <a href="https://jobsglassdoor-dataengineers.streamlit.app/" target="_blank">Live Preview</a>
     ·
-    <a href="https://www.kaggle.com/datasets/hamzaelbelghiti/data-engineering-jobs-in-the-usa-glassdoor">Data on Kaggle</a>
+    <a href="https://www.kaggle.com/datasets/hamzaelbelghiti/data-engineering-jobs-in-the-usa-glassdoor" target="_blank">Data on Kaggle</a>
     ·
-    <a href="https://github.com/Hamagistral/DataEngineers-Glassdoor/issues">Request Feature</a>
+    <a href="https://github.com/Hamagistral/DataEngineers-Glassdoor/issues" target="_blank">Request Feature</a>
 </div>
 <hr>
 
@@ -53,6 +53,7 @@ The salary prediction model is built using a random forest regressor. Finally, t
 
 ## 📨 Contact Me
 
-![https://www.linkedin.com/in/hamza-elbelghiti/](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
-![https://github.com/Hamagistral](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-![hamza.lbelghiti@gmail.com](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
+
+[LinkedIn](https://www.linkedin.com/in/hamza-elbelghiti/) •
+[Github](https://github.com/Hamagistral) •
+[Gmail](hamza.lbelghiti@gmail.com)
