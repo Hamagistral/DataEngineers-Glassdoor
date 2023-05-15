@@ -44,7 +44,7 @@ def load_data():
     data_path = Path(__file__).parents[1] / 'data/processed/glassdoor-data-engineer-eda.csv'
     df = pd.read_csv(data_path)
     
-    cols = ['job_languages', 'job_cloud', 'job_viz', 'job_databases', 'job_librairies']
+    cols = ['job_languages', 'job_cloud', 'job_viz', 'job_databases', 'job_bigdata', 'job_devops']
 
     def safe_eval(x):
         try:
@@ -59,11 +59,12 @@ def load_data():
 df = load_data()
 
 # Data Engineering Skills
-prog_languages = ['python', 'java', 'scala', 'go', 'r', 'c++', 'c#', 'sql', 'nosql', 'shell', 'rust']
-cloud_tools = ['aws', 'azure', 'google cloud', 'snowflake', 'databricks', 'redshift', 'oracle', 'gcp', 'bigquery']
-viz_tools = ['power bi', 'tableau', 'excel', 'ssis', 'qlik', 'sap', 'sas', 'dax']
-databases = ['sql server', 'postegresql', 'mongodb', 'mysql', 'casandra', 'elasticsearch', 'dynamodb', 'redis', 'neo4j']
-librairies = ['spark', 'hadoop', 'kafka', 'airflow']
+prog_languages = ['python', 'java', 'scala', 'go', 'r', 'c++', 'c#', 'sql', 'nosql', 'rust', 'shell']
+cloud_tools = ['aws', 'azure', 'google cloud', 'snowflake', 'databricks', 'redshift']
+viz_tools = ['power bi', 'tableau', 'excel', 'ssis', 'qlik', 'sap', 'looker']
+databases = ['sql server', 'postegresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'dbt']
+big_data = ['spark', 'hadoop', 'kafka', 'flink']
+devops = ['gitlab', 'terraform', 'docker', 'bash', 'ansible']
 
 def show_explore_page():
 
@@ -73,7 +74,7 @@ def show_explore_page():
     # Data Engineering Skills
     st.markdown("#### 🛠️ Top Skills for Data Engineers")
 
-    type = st.radio("Skills :", ('Languages', 'Cloud', 'Visualization', 'Databases', 'Librairies'), horizontal=True)
+    type = st.radio("Skills :", ('Languages', 'Cloud', 'Visualization', 'Databases', 'Big Data', 'Dev Ops'), horizontal=True)
 
     if type == "Languages":
         data = df['job_languages']
@@ -87,9 +88,12 @@ def show_explore_page():
     elif type == "Databases":
         data = df['job_databases']
         tools = databases
-    elif type == "Librairies":
-        data = df['job_librairies']
-        tools = librairies
+    elif type == "Big Data":
+        data = df['job_bigdata']
+        tools = big_data
+    elif type == "Dev Ops":
+        data = df['job_devops']
+        tools = devops
 
     filtered_keywords(data, tools)
 
@@ -186,15 +190,9 @@ def show_explore_page():
 
     st.altair_chart(industries_chart, use_container_width=True)
 
-    st.markdown("""### For more see : [😼 GitHub](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_eda.ipynb)""")
+    st.markdown("""### For more see : [😼 GitHub](https://github.com/Hamagistral/DataEngineeringJobs-Analysis/blob/master/notebooks/data_eda.ipynb)""")
 
 show_explore_page()
-
-# Hide Left Menu
-st.markdown("""<style>
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-</style>""", unsafe_allow_html=True)
 
 
 

@@ -18,7 +18,7 @@ st.write("""The project begins with web scraping job postings for data engineers
                 company names, job locations, job descriptions, salaries, education requirements, and required skills. The data is then cleaned and 
                 preprocessed  to remove irrelevant information and ensure consistency.""")
 
-st.write("""Exploratory data analysis (EDA) is performed on the cleaned data to gain insights into trends and patterns. This includes identifying 
+st.write("""Exploratory Data Analysis (EDA) is performed on the cleaned data to gain insights into trends and patterns. This includes identifying 
                 the most common job titles, the industries and locations with the highest demand, and the most commonly required skills and education 
                 degrees. EDA also involves creating visualizations to aid in understanding the data.""")
 
@@ -30,7 +30,7 @@ st.write("""The salary prediction model is built using a random forest regressor
     
 st.markdown("### 🔗 Links :")
 
-st.markdown("""##### [📘 Data on Kaggle](https://www.kaggle.com/datasets/hamzaelbelghiti/data-engineering-jobs-in-the-usa-glassdoor) | [😼 See full project on GitHub](https://github.com/Hamagistral/DataEngineers-Glassdoor) | [📨 Contact me via LinkedIn](https://www.linkedin.com/in/hamza-elbelghiti/) """)
+st.markdown("""##### [📘 Data on Kaggle](https://www.kaggle.com/datasets/hamzaelbelghiti/data-engineering-jobs-in-the-usa-glassdoor) | [😼 See full project on GitHub](https://github.com/Hamagistral/DataEngineeringJobs-Analysis) | [📨 Contact me via LinkedIn](https://www.linkedin.com/in/hamza-elbelghiti/) """)
 
 # Hide Left Menu
 st.markdown("""<style>
