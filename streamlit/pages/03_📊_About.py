@@ -40,9 +40,7 @@ st.image(architecture)
 
 st.markdown("### ⚒️ Mage ETL :")
 
-etl = Image.open('mage-etl-glassdoor.png')
-
-st.image(etl)
+st.image("https://i.postimg.cc/15gD3byG/mage-etl-glassdoor.png")
 
 st.markdown("### 🔗 Links :")
 
