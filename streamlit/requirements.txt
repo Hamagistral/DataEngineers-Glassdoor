@@ -4,3 +4,4 @@ numpy==1.23.1
 pandas==1.5.3
 seaborn==0.12.2
 scikit-learn==1.2.1
+s3fs==2023.5.0

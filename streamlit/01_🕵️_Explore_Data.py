@@ -1,9 +1,7 @@
 import streamlit as st
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 import altair as alt
-from pathlib import Path
+import boto3
 
 st.set_page_config(page_title="Exploratory Data Analysis", page_icon='👨‍💻')
 
@@ -41,9 +39,12 @@ def filtered_keywords(tools, keywords, head=10):
 @st.cache_resource
 def load_data():
 
-    data_path = Path(__file__).parents[1] / 'data/processed/glassdoor-data-engineer-eda.csv'
-    df = pd.read_csv(data_path)
-    
+    s3 = boto3.resource('s3', aws_access_key_id=st.secrets['AWS_ACCESS_KEY_ID'], aws_secret_access_key=st.secrets['AWS_SECRET_ACCESS_KEY'])
+    bucket = s3.Bucket(st.secrets['AWS_BUCKET_NAME'])
+    obj = bucket.Object('glassdoor-data-engineer-2023.csv')
+    body = obj.get()['Body']
+    df = pd.read_csv(body)
+        
     cols = ['job_languages', 'job_cloud', 'job_viz', 'job_databases', 'job_bigdata', 'job_devops']
 
     def safe_eval(x):
