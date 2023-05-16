@@ -34,9 +34,7 @@ st.write("""The salary prediction model is built using a random forest regressor
 
 st.markdown("### 📝 Project Architecture :")
 
-architecture = Image.open('architecture.png')
-
-st.image(architecture)
+st.image("https://i.postimg.cc/j23Rx9CW/architecture.png")
 
 st.markdown("### ⚒️ Mage ETL :")
 
