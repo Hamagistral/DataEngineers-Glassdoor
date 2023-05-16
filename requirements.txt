@@ -1,0 +1,8 @@
+altair==4.2.0
+boto3==1.26.90
+mage_ai==0.8.77
+numpy==1.23.1
+pandas==1.5.3
+Pillow==9.5.0
+python-dotenv==1.0.0
+selenium==4.9.1
