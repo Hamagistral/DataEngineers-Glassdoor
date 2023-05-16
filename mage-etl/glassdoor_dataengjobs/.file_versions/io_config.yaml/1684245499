@@ -1,0 +1,8 @@
+version: 0.1.1
+default:
+  # Default profile created for data IO access.
+  # Add your credentials for the source you use, and delete the rest.
+  AWS_ACCESS_KEY_ID: "AKIAROEJSH4LXFCLYPYN"
+  AWS_SECRET_ACCESS_KEY: "559SF+BcYK5DccYTlpHp+mEnxdk31FIBDdBKg0no"
+  AWS_SESSION_TOKEN: session_token (Used to generate Redshift credentials)
+  AWS_REGION: us-east-1
