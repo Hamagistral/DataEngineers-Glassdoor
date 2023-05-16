@@ -34,15 +34,12 @@ st.write("""The salary prediction model is built using a random forest regressor
 
 st.markdown("### 📝 Project Architecture :")
 
-architecture = Image.open('./../architecture.png')
 
-st.image(architecture)
+st.image("https://ibb.co/LP1hz8n")
 
 st.markdown("### ⚒️ Mage ETL :")
 
-etl = Image.open('./../mage-etl-glassdoor.png')
-
-st.image(etl)
+st.image("https://ibb.co/K9B1PHC")
 
 st.markdown("### 🔗 Links :")
 
