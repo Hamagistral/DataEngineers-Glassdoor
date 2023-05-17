@@ -155,24 +155,6 @@ def show_explore_page():
 
     st.altair_chart(salary_chart, use_container_width=True)
 
-    # Top Recruiting Companies
-    st.markdown("#### 🖥️ Top 10 Companies Recruiting Data Engineers")
-
-    top10 = df['company'].value_counts().head(10)
-
-    companies_chart = alt.Chart(top10.reset_index()).mark_bar().encode(
-        y=alt.Y('index:N', sort='-x', title=None),
-        x=alt.X('company:Q', title=None),
-        color=alt.Color('index:N', legend=None)
-    ).properties(
-        height=500
-    ).configure_axis(
-        labelFontSize=14,
-        labelAngle=0
-    )
-
-    st.altair_chart(companies_chart, use_container_width=True)
-
     # Top Company Industries
     st.markdown("#### 🖥️ Top 10 Company Industries Recruiting Data Engineers")
 
