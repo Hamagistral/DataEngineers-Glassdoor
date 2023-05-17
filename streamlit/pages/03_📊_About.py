@@ -42,7 +42,7 @@ st.image("https://i.postimg.cc/15gD3byG/mage-etl-glassdoor.png")
 
 st.markdown("### 🔗 Links :")
 
-st.markdown("""##### [📘 Data on Kaggle](https://www.kaggle.com/datasets/hamzaelbelghiti/data-engineering-jobs-in-the-usa-glassdoor) | [😼 See full project on GitHub](https://github.com/Hamagistral/DataEngineeringJobs-Analysis) | [📨 Contact me via LinkedIn](https://www.linkedin.com/in/hamza-elbelghiti/) """)
+st.markdown("""##### [📘 Data on Kaggle](https://www.kaggle.com/datasets/hamzaelbelghiti/data-engineering-jobs-in-the-usa-glassdoor) | [😼 See full project on GitHub](https://github.com/Hamagistral/DataEngineers-Glassdoor) | [📨 Contact me via LinkedIn](https://www.linkedin.com/in/hamza-elbelghiti/) """)
 
 # Hide Left Menu
 st.markdown("""<style>

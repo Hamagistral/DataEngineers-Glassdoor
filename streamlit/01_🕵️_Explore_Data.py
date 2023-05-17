@@ -173,7 +173,7 @@ def show_explore_page():
 
     st.altair_chart(industries_chart, use_container_width=True)
 
-    st.markdown("""### For more see : [😼 GitHub](https://github.com/Hamagistral/DataEngineeringJobs-Analysis/blob/master/notebooks/data_eda.ipynb)""")
+    st.markdown("""### For more see : [😼 GitHub](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_eda.ipynb)""")
 
 show_explore_page()
 
