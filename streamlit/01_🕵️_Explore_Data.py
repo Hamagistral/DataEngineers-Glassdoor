@@ -61,11 +61,11 @@ df = load_data()
 
 # Data Engineering Skills
 prog_languages = ['python', 'java', 'scala', 'go', 'r', 'c++', 'c#', 'sql', 'nosql', 'rust', 'shell']
-cloud_tools = ['aws', 'azure', 'google cloud', 'snowflake', 'databricks', 'redshift']
+cloud_tools = ['aws', 'azure', 'google cloud']
 viz_tools = ['power bi', 'tableau', 'excel', 'ssis', 'qlik', 'sap', 'looker']
-databases = ['sql server', 'postegresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'dbt']
+databases = ['sql server', 'postegresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'dbt', 'databricks', 'redshift', 'snowflake']
 big_data = ['spark', 'hadoop', 'kafka', 'flink']
-devops = ['gitlab', 'terraform', 'docker', 'bash', 'ansible']
+devops = ['gitlab', 'terraform', 'docker', 'kubernetes', 'ansible']
 
 def show_explore_page():
 

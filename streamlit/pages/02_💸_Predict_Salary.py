@@ -30,7 +30,8 @@ def show_predict_page():
 
     st.write("""#### We need some informations to predict your salary :""")
 
-    states = ('Remote', 'CA', 'GA', 'TX', 'NJ', 'DC', 'VA', 'MN', 'WI', 'IL', 'MS', 'MD', 'NY', 'MA', 'OR', 'UT', 'FL', 'OH', 'PA')
+    states = ("Remote","California, CA","Texas, TX","Georgia, GA","New Jersey, NJ","Illinois, IL","New York, NY","District of Columbia, DC",
+              "Virginia, VA","Massachusetts, MA","Pennsylvania, PA","Minnesota, MN","Florida, FL","North Carolina, NC","Colorado, CO","Wisconsin, WI","	Ohio, OH")
 
     degrees = ('Bachelor', 'Master')
 
@@ -76,16 +77,19 @@ def show_predict_page():
     submit = st.button("Calculate Salary")
 
     if submit:
-        X = np.array([[state, seniority, education.lower(), experience, industry, company_rating]])
-        X[:, 0] = le_state.transform(X[:,0])
-        X[:, 1] = le_sen.transform(X[:,1])
-        X[:, 2] = le_edu.transform(X[:,2])
-        X[:, 3] = le_exp.transform(X[:,3])
-        X[:, 4] = le_indu.transform(X[:,4])
-        X[:, 5] = le_rating.transform(X[:,5])
+        try:
+            X = np.array([[state, seniority, education.lower(), experience, industry, company_rating]])
+            X[:, 0] = le_state.transform(X[:,0])
+            X[:, 1] = le_sen.transform(X[:,1])
+            X[:, 2] = le_edu.transform(X[:,2])
+            X[:, 3] = le_exp.transform(X[:,3])
+            X[:, 4] = le_indu.transform(X[:,4])
+            X[:, 5] = le_rating.transform(X[:,5])
 
-        salary = regressor.predict(X)
-        st.subheader(f'The estimated salary is ${"{:,}".format(round(salary[0]))} /yr')
+            salary = regressor.predict(X)
+            st.subheader(f'The estimated salary is ${"{:,}".format(round(salary[0]))} /yr')
+        except ValueError: 
+            st.error("There was an error while trying to predict your salary. Please try with other options.")
 
 show_predict_page()
 
