@@ -194,4 +194,11 @@ def get_jobs(keyword, num_pages, path):
 
 # Scrape last week job postings
 path = "chromedriver"
-get_jobs(keyword='data-engineer', num_pages=15, path=path) 
+# get_jobs(keyword='data-engineer', num_pages=15, path=path) 
+
+data_path = '../data/raw/'
+full_path = data_path + 'glassdoor-'+'data-engineer'+'-'+week_num+'-'+year+'.csv'
+csv_filename = 'glassdoor-'+'data-engineer'+'-'+week_num+'-'+year+'.csv'
+
+with open(full_path, 'rb') as f:
+    s3.upload_fileobj(f, S3_BUCKET_NAME, csv_filename)

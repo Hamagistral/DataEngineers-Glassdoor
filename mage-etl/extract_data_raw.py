@@ -32,8 +32,10 @@ def load_from_s3_bucket(*args, **kwargs):
             bucket_name,
             object_key,
         )
-        
+    
+    print(object_key)
     print(df.shape)
+    
     return df
 
 

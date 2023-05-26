@@ -30,8 +30,15 @@ def load_from_s3_bucket(*args, **kwargs):
         object_key,
     )
     
+    print(object_key)
     print(df.shape)
-    return df.drop(columns=['Unnamed: 0'])
+
+    try: 
+        df = df.drop(columns=['Unnamed: 0'])
+    except:
+        pass
+
+    return df
 
 
 @test

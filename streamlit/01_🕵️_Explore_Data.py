@@ -63,7 +63,7 @@ df = load_data()
 prog_languages = ['python', 'java', 'scala', 'go', 'r', 'c++', 'c#', 'sql', 'nosql', 'rust', 'shell']
 cloud_tools = ['aws', 'azure', 'google cloud']
 viz_tools = ['power bi', 'tableau', 'excel', 'ssis', 'qlik', 'sap', 'looker']
-databases = ['sql server', 'postegresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'dbt', 'databricks', 'redshift', 'snowflake']
+databases = ['sql server', 'postgresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'dbt', 'databricks', 'redshift', 'snowflake']
 big_data = ['spark', 'hadoop', 'kafka', 'flink']
 devops = ['gitlab', 'terraform', 'docker', 'kubernetes', 'ansible']
 
@@ -141,6 +141,14 @@ def show_explore_page():
     )
 
     st.altair_chart(experience_chart, use_container_width=True)
+
+    # Salary Distribution
+    st.markdown("#### 💸 Average Salary")
+
+    st.markdown("How much does a Data Engineer make in the United States?")
+
+    avg_salary = df['salary_estimate'].mean()
+    st.success(f"### ${round(avg_salary)} per year.")
 
     # Salary Distribution
     st.markdown("#### 🤑 Salary Distribution")

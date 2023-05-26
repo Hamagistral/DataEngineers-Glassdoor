@@ -30,8 +30,25 @@ def show_predict_page():
 
     st.write("""#### We need some informations to predict your salary :""")
 
-    states = ("Remote","California, CA","Texas, TX","Georgia, GA","New Jersey, NJ","Illinois, IL","New York, NY","District of Columbia, DC",
-              "Virginia, VA","Massachusetts, MA","Pennsylvania, PA","Minnesota, MN","Florida, FL","North Carolina, NC","Colorado, CO","Wisconsin, WI","	Ohio, OH")
+    states = ('Remote',
+                'TX',
+                'CA',
+                'GA',
+                'NJ',
+                'MA',
+                'NY',
+                'VA',
+                'DC',
+                'IL',
+                'FL',
+                'NC',
+                'PA',
+                'MN',
+                'CO',
+                'OH',
+                'WI',
+                'OR',
+                'MD')
 
     degrees = ('Bachelor', 'Master')
 

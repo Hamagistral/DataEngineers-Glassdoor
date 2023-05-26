@@ -11,7 +11,7 @@ import re
 prog_languages = ['python', 'java', 'scala', 'go', 'r', 'c++', 'c#', 'sql', 'nosql', 'rust', 'shell']
 cloud_tools = ['aws', 'azure', 'google cloud']
 viz_tools = ['power bi', 'tableau', 'excel', 'ssis', 'qlik', 'sap', 'looker']
-databases = ['sql server', 'postegresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'dbt', 'databricks', 'redshift', 'snowflake']
+databases = ['sql server', 'postgresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'dbt', 'databricks', 'redshift', 'snowflake']
 big_data = ['spark', 'hadoop', 'kafka', 'flink']
 devops = ['gitlab', 'terraform', 'docker', 'kubernetes', 'ansible']
 
@@ -155,7 +155,7 @@ def transform(data, data_2, *args, **kwargs):
 
     df['job_experience'] = df['job_description'].apply(lambda x: extract_experience(x))
 
-    data = pd.concat([df, data_2], axis=0)
+    data = pd.concat([df, data_2], axis=0, join="outer")
 
     data = data[data['salary_estimate'] <= 175000]
 
