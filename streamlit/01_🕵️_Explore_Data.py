@@ -182,9 +182,14 @@ def show_explore_page():
     st.altair_chart(industries_chart, use_container_width=True)
 
     st.markdown("""### For more see : [😼 GitHub](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_eda.ipynb)""")
+    
+    hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    """
+
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 show_explore_page()
-
-
-
-
