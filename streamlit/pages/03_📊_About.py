@@ -5,6 +5,8 @@ st.set_page_config(page_title="About", page_icon='📊')
 
 st.header("📊 About The Project")
 
+st.markdown("---")
+
 st.markdown("### 🎯 Goal :")
 
 st.write("""The goal of this data science project is to gain insights into the job market for data engineers in the USA. 
@@ -32,6 +34,8 @@ st.write("""After EDA, feature engineering is performed to create new features t
 st.write("""The salary prediction model is built using a random forest regressor. Finally, the model is deployed in a web application using Streamlit, 
                 allowing users to input their own data and receive a salary prediction based on the model.""")
 
+st.markdown("---")
+
 st.markdown("### 📝 Project Architecture :")
 
 st.image("https://i.postimg.cc/j23Rx9CW/architecture.png")
@@ -39,6 +43,8 @@ st.image("https://i.postimg.cc/j23Rx9CW/architecture.png")
 st.markdown("### ⚒️ Mage ETL :")
 
 st.image("https://i.postimg.cc/15gD3byG/mage-etl-glassdoor.png")
+
+st.markdown("---")
 
 st.markdown("### 🔗 Links :")
 

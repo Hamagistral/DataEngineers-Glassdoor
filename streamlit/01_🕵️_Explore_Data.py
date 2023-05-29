@@ -12,18 +12,21 @@ def filtered_keywords(tools, keywords, head=10):
     
     # get frequency of occurrence of word (as word only appears once per line)
     length = len(tools) # number of job postings
-    count_keywords['percentage'] = 100 * count_keywords.counts / length
+    count_keywords['percentage'] = count_keywords.counts / length
 
     # plot the results
     count_keywords = count_keywords[count_keywords.keywords.isin(keywords)]
     count_keywords = count_keywords.head(head)
     
-    bar_chart = alt.Chart(count_keywords).mark_bar().encode(
-        x=alt.X('percentage', type="quantitative", title=None),
-        y=alt.Y('keywords', type="nominal", title=None, sort=None),
-        color='keywords'
+
+    bar_chart = alt.Chart(count_keywords).mark_bar(cornerRadiusBottomRight=10, cornerRadiusTopRight=10).encode(
+        x=alt.X('percentage', type="quantitative", title=None, axis=alt.Axis(format='%', labelFontSize=17, titleFontSize=17)),
+        y=alt.Y('keywords', type="nominal", title=None, sort=None, axis=alt.Axis(labelFontSize=20)),
+        color='keywords',
+        tooltip=["keywords", alt.Tooltip("percentage", format=".1%")]
     ).configure_axis(
-        labelFontSize=18
+        labelFontSize=18,
+        grid=False
     ).configure_text(
         fontSize=16,
         fontWeight='bold'
@@ -31,6 +34,8 @@ def filtered_keywords(tools, keywords, head=10):
         disable=True
     ).properties(
         height=500
+    ).configure_view(
+        strokeWidth=0
     )
 
     st.altair_chart(bar_chart, use_container_width=True)
@@ -104,7 +109,7 @@ def show_explore_page():
     degree_counts = df['job_education'].value_counts().reset_index()
     degree_counts.columns = ['Degree', 'Count']
 
-    education_chart = alt.Chart(degree_counts).mark_bar().encode(
+    education_chart = alt.Chart(degree_counts).mark_bar(cornerRadiusTopLeft=10, cornerRadiusTopRight=10).encode(
         x=alt.Y('Degree:N', title=None),
         y=alt.X('Count:Q', title=None),
         color="Degree"
@@ -112,7 +117,8 @@ def show_explore_page():
         height=500
     ).configure_axis(
         labelFontSize=18,
-        labelAngle=0
+        labelAngle=0,
+        grid=False
     ).configure_text(
         fontSize=16,
         fontWeight='bold'
@@ -129,7 +135,7 @@ def show_explore_page():
     exp_counts = df['job_experience'].value_counts().reset_index()
     exp_counts.columns = ['Experience', 'Count']
 
-    experience_chart = alt.Chart(exp_counts).mark_bar().encode(
+    experience_chart = alt.Chart(exp_counts).mark_bar(cornerRadiusTopLeft=10, cornerRadiusTopRight=10).encode(
         x=alt.X('Experience:N', sort='-y', title=None),
         y=alt.Y('Count:Q', title=None),
         color=alt.Color('Experience', legend=None)
@@ -137,7 +143,8 @@ def show_explore_page():
         height=500
     ).configure_axis(
         labelFontSize=18,
-        labelAngle=0
+        labelAngle=0,
+        grid=False
     )
 
     st.altair_chart(experience_chart, use_container_width=True)
@@ -153,12 +160,14 @@ def show_explore_page():
     # Salary Distribution
     st.markdown("#### 🤑 Salary Distribution")
 
-    salary_chart = alt.Chart(df).mark_bar(opacity=0.9, interpolate='step', binSpacing=0.8).encode(
-        x=alt.X('salary_estimate:Q', bin=alt.Bin(maxbins=20), title="Salary Estimate in $"),
+    salary_chart = alt.Chart(df).mark_bar(cornerRadiusTopLeft=10, cornerRadiusTopRight=10, interpolate='step', binSpacing=0.8).encode(
+        x=alt.X('salary_estimate:Q', bin=alt.Bin(maxbins=10), title="Salary Estimate in $"),
         y=alt.Y('count()', title=None),
-        color=alt.value('#FFA500')
+        color=alt.Color('count()', legend=None)
     ).properties(
         height=500
+    ).configure_axis(
+        grid=False
     )
 
     st.altair_chart(salary_chart, use_container_width=True)
@@ -169,7 +178,7 @@ def show_explore_page():
     industry_counts = df['company_industry'].value_counts().reset_index().head(10)
     industry_counts.columns = ['Industry', 'Count']
 
-    industries_chart = alt.Chart(industry_counts).mark_bar().encode(
+    industries_chart = alt.Chart(industry_counts).mark_bar(cornerRadiusBottomRight=10, cornerRadiusTopRight=10).encode(
         y=alt.Y('Industry:N', sort='-x', title=None),
         x=alt.X('Count:Q', title=None),
         color=alt.Color('Industry', legend=None)
@@ -177,6 +186,7 @@ def show_explore_page():
         height=500
     ).configure_axis(
         labelFontSize=12,
+        grid=False
     )
 
     st.altair_chart(industries_chart, use_container_width=True)
