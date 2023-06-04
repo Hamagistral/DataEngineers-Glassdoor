@@ -74,7 +74,7 @@ devops = ['gitlab', 'terraform', 'docker', 'kubernetes', 'ansible']
 
 def show_explore_page():
 
-    st.header("🕵️ Exploring Data Engineering Jobs")
+    st.header("🕵️ Exploring Data Engineer Jobs")
     st.write(f":blue[{len(df)} jobs analyzed from Glassdoor USA]")
 
     # Data Engineering Skills
