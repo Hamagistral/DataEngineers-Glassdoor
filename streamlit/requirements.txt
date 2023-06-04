@@ -7,4 +7,4 @@ scikit-learn==1.2.1
 s3fs==2023.5.0
 aioboto3
 aiobotocore
-urllib3==1.26.6
+urllib3==1.26
