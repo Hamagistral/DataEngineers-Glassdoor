@@ -103,7 +103,9 @@ Please refer to the respective notebooks ([data cleaning](https://github.com/Ham
 ## 🖥️ Installation : 
 1. Clone the repository:
 
-```git clone https://github.com/Hamagistral/DataEngineers-Glassdoor.git```
+```
+git clone https://github.com/Hamagistral/DataEngineers-Glassdoor.git
+```
 
 2. Install the required packages:
 
