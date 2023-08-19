@@ -103,34 +103,48 @@ Please refer to the respective notebooks ([data cleaning](https://github.com/Ham
 ## 🖥️ Installation : 
 1. Clone the repository:
 
-`git clone https://github.com/Hamagistral/DataEngineers-Glassdoor.git`
+```
+git clone https://github.com/Hamagistral/DataEngineers-Glassdoor.git
+```
 
 2. Install the required packages:
 
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 ### - Run Mage
 
 1. Change directory to mage-etl:
 
-`cd mage-etl`
+```
+cd mage-etl
+```
 
 2. Launch project : 
 
-`mage start glassdoor_dataengjobs`
+```
+mage start glassdoor_dataengjobs
+```
 
 3. Run pipeline :
 
-`mage run glassdoor_dataengjobs glassdoor_dataeng_pipeline`
+```
+mage run glassdoor_dataengjobs glassdoor_dataeng_pipeline
+```
 
 ### - Usage : 
 1. Change directory to streamlit:
 
-`cd streamlit`
+```
+cd streamlit
+```
 
 2. Run the app:
 
-`streamlit run 01_🕵️_Explore_Data.py`
+```
+streamlit run 01_🕵️_Explore_Data.py
+```
 
 <a name="contact"></a>
 ## 📨 Contact Me
