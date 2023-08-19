@@ -4,5 +4,6 @@ matplotlib
 numpy==1.23.1
 pandas
 seaborn
+urllib3<1.27,>=1.25.4
 boto3
 altair==4.2.0
