@@ -26,7 +26,7 @@ unique_company_ratings = [1., 2., 2.3, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3
 
 def show_predict_page():
 
-    st.header("💸 Data Engineer's Salary Prediction")
+    st.write("## 💸 Data Engineer Salary Prediction 💹")
 
     st.write("""#### We need some informations to predict your salary :""")
 
@@ -104,7 +104,7 @@ def show_predict_page():
             X[:, 5] = le_rating.transform(X[:,5])
 
             salary = regressor.predict(X)
-            st.subheader(f'The estimated salary is ${"{:,}".format(round(salary[0]))} /yr')
+            st.success(f"#### 💰 The estimated salary is ${round(salary[0]):,} /yr")
         except ValueError: 
             st.error("There was an error while trying to predict your salary. Please try with other options.")
 

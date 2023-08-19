@@ -77,6 +77,8 @@ def show_explore_page():
     st.header("🕵️ Exploring Data Engineer Jobs")
     st.write(f":blue[{len(df)} jobs analyzed from Glassdoor USA]")
 
+    st.info("##### Gain insights into the job market for data engineers in the USA")
+
     # Data Engineering Skills
     st.markdown("#### 🛠️ Top Skills for Data Engineers")
 
@@ -102,6 +104,18 @@ def show_explore_page():
         tools = devops
 
     filtered_keywords(data, tools)
+
+    st.markdown("#")
+
+    # Salary Distribution
+    st.markdown("#### 🤑 Average Salary")
+
+    st.markdown("How much does a Data Engineer make in average in the United States?")
+
+    avg_salary = df['salary_estimate'].mean()
+    st.success(f"### 💲 {round(avg_salary):,} per year.")
+
+    st.markdown("#")
 
     # Most in Demand Degrees
     st.markdown("#### 🎓 Most in Demand Degrees for Data Engineers")
@@ -149,13 +163,6 @@ def show_explore_page():
 
     st.altair_chart(experience_chart, use_container_width=True)
 
-    # Salary Distribution
-    st.markdown("#### 💸 Average Salary")
-
-    st.markdown("How much does a Data Engineer make in the United States?")
-
-    avg_salary = df['salary_estimate'].mean()
-    st.success(f"### ${round(avg_salary)} per year.")
 
     # Salary Distribution
     st.markdown("#### 🤑 Salary Distribution")
@@ -191,7 +198,7 @@ def show_explore_page():
 
     st.altair_chart(industries_chart, use_container_width=True)
 
-    st.markdown("""### For more see : [😼 GitHub](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_eda.ipynb)""")
+    st.markdown("""### For more Data Analysis and Exploration see : [😼 GitHub](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_eda.ipynb)""")
     
     hide_streamlit_style = """
     <style>
