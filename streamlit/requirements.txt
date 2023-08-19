@@ -5,4 +5,4 @@ numpy
 pandas
 seaborn
 boto3
-altair
+altair==4.2.0
