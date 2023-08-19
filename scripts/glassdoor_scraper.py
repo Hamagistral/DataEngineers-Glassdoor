@@ -1,4 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 from dotenv import load_dotenv
@@ -26,10 +27,11 @@ def get_jobs(keyword, num_pages, path):
     '''Gathers jobs as a dataframe, scraped from Glassdoor'''
 
     # Initializing the webdriver
+    service = Service()
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
-    driver = webdriver.Chrome(executable_path=path, options=options)
+    driver = webdriver.Chrome(service=service, options=options)
     driver.set_window_size(1120, 1000)
 
     # Data Engineers job listings in the US posted last week (fromAge=7)
@@ -70,7 +72,7 @@ def get_jobs(keyword, num_pages, path):
 
                     # Closes the signup pop-up
                     try:
-                        driver.find_element(By.XPATH,".//span[@class='SVGInline modal_closeIcon']").click()
+                        driver.find_element(By.XPATH,".//button[@class='e1jbctw80 ei0fd8p1 css-1n14mz9 e1q8sty40']").click()
                         time.sleep(2)
                     except NoSuchElementException:
                         time.sleep(2)
@@ -164,7 +166,7 @@ def get_jobs(keyword, num_pages, path):
             # Moves to the next page         
             if done:
                 print(str(current_page) + ' ' + 'out of' +' '+ str(num_pages) + ' ' + 'pages done')
-                driver.find_element(By.XPATH,"//span[@alt='next-icon']").click()   
+                driver.find_element(By.XPATH,"//button[@class='nextButton job-search-opoz2d e13qs2072']").click()   
                 current_page = current_page + 1
                 time.sleep(3)
             
