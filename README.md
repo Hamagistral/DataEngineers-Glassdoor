@@ -28,7 +28,7 @@
 2. [ References ](#refs)
 3. [ Project Architecture ](#arch)
 4. [ Web Scrapinng ](#webscraping)
-5. [ Data Cleaning, EDA and Data Modeling ](#dataedamodel)
+5. [ Data Cleaning, EDA and Model Building](#dataedamodel)
 6. [ Installation ](#installation)
 7. [ Contact ](#contact)
 <hr>
@@ -95,9 +95,9 @@ I adjusted the web scraper using Selenium to scrape data engineering jobs posted
 With each job, I obtained the following: Company Name, Job title, Salary Estimate, Job Description, Rating, Job Location, Company Size, Company Founded Date, Type of Ownership, Industry and Sector. The main challenge for this scraping task, was the duplicated job postings, after the 6th page or so the glassdoor website keeps rerendring the first jobs listings, so all the jobs scraped become a duplicates. That's why I came up with the idea to implement a scheduler to run the script once every week to get the latest job listings, and then usin a data pipeline clean and transform the data then joining it with the cleaned dataset stored in aws s3 bucket that contains all non duplicated and cleaned job listings from previous weeks.
 
 <a name="dataedamodel"></a>
-## 🧹 Data Cleaning, EDA and Modeling
+## 🧹 Data Cleaning, EDA and Model Building
 
-Please refer to the respective notebooks ([data cleaning](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_cleaning.ipynb), [data eda](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_eda.ipynb), [data modeling](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_modeling.ipynb)).
+Please refer to the respective notebooks ([data cleaning](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_cleaning.ipynb), [data eda](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_eda.ipynb), [model buidling](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_modeling.ipynb)).
 
 <a name="installation"></a>
 ## 🖥️ Installation : 
