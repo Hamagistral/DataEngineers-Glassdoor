@@ -144,17 +144,20 @@ def show_predict_page():
     submit = st.button("Calculate Salary")
 
     if submit:
-        X = np.array([[state, seniority, education.lower(), experience, industry, float(company_rating)]])
-        X[:, 0] = le_state.transform(X[:,0])
-        X[:, 1] = le_sen.transform(X[:,1])
-        X[:, 2] = le_edu.transform(X[:,2])
-        X[:, 3] = le_exp.transform(X[:,3])
-        X[:, 4] = le_indu.transform(X[:,4])
-        X[:, 5] = le_rating.transform(X[:,5])
+        try:
+            X = np.array([[state, seniority, education.lower(), experience, industry, float(company_rating)]])
+            X[:, 0] = le_state.transform(X[:,0])
+            X[:, 1] = le_sen.transform(X[:,1])
+            X[:, 2] = le_edu.transform(X[:,2])
+            X[:, 3] = le_exp.transform(X[:,3])
+            X[:, 4] = le_indu.transform(X[:,4])
+            X[:, 5] = le_rating.transform(X[:,5])
 
-        salary = regressor.predict(X)
-        st.success(f"### 💰 The estimated salary is ${round(salary[0]):,} /yr")
-        
+            salary = regressor.predict(X)
+            st.success(f"### 💰 The estimated salary is ${round(salary[0]):,} /yr")
+        except ValueError: 
+            st.error("There was an error while trying to predict your salary. Please try with other options.")
+
 show_predict_page()
 
 # Hide Left Menu
