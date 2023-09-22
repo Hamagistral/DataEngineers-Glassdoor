@@ -66,11 +66,11 @@ df = load_data()
 
 # Data Engineering Skills
 prog_languages = ['python', 'java', 'scala', 'go', 'r', 'c++', 'c#', 'sql', 'nosql', 'rust', 'shell']
-cloud_tools = ['aws', 'azure', 'google cloud']
+cloud_tools = ['aws', 'azure', 'gcp', 'snowflake', 'databricks', 'redshift']
 viz_tools = ['power bi', 'tableau', 'excel', 'ssis', 'qlik', 'sap', 'looker']
-databases = ['sql server', 'postgresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'dbt', 'databricks', 'redshift', 'snowflake']
+databases = ['sql server', 'postgresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'dbt']
 big_data = ['spark', 'hadoop', 'kafka', 'flink']
-devops = ['gitlab', 'terraform', 'docker', 'kubernetes', 'ansible']
+devops = ['gitlab', 'terraform', 'docker', 'bash', 'ansible']
 
 def show_explore_page():
 
@@ -180,7 +180,7 @@ def show_explore_page():
     st.altair_chart(salary_chart, use_container_width=True)
 
     # Top Company Industries
-    st.markdown("#### 🖥️ Top 10 Company Industries Recruiting Data Engineers")
+    st.markdown("#### 🚀 Top 10 Company Industries Recruiting Data Engineers")
 
     industry_counts = df['company_industry'].value_counts().reset_index().head(10)
     industry_counts.columns = ['Industry', 'Count']
@@ -198,7 +198,7 @@ def show_explore_page():
 
     st.altair_chart(industries_chart, use_container_width=True)
 
-    st.markdown("""### For more Data Analysis and Exploration see : [😼 GitHub](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_eda.ipynb)""")
+    st.markdown("""### For more Data Analysis and Exploration see : [🖥️ GitHub](https://github.com/Hamagistral/DataEngineers-Glassdoor/blob/master/notebooks/data_eda.ipynb)""")
     
     hide_streamlit_style = """
     <style>

@@ -3,3 +3,4 @@ streamlit/__pycache__
 streamlit/.streamlit
 mage-etl/glassdoor_dataengjobs/io_config.yaml
 mage-etl/glassdoor_dataengjobs/.file_versions/io_config.yaml
+test_venv/
