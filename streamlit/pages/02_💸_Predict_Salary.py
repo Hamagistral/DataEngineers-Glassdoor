@@ -156,7 +156,7 @@ def show_predict_page():
             salary = regressor.predict(X)
             st.success(f"### 💰 The estimated salary is ${round(salary[0]):,} /yr")
         except ValueError: 
-            st.error(ValueError)
+            ValueError
 
 show_predict_page()
 
