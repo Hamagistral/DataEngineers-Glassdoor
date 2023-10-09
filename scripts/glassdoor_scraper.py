@@ -63,7 +63,7 @@ def get_jobs(keyword, num_pages, path):
         while not done:
             
             try: 
-                job_cards = driver.find_elements(By.XPATH,"//article[@id='MainCol']//ul/li[@data-adv-type='GENERAL']")
+                job_cards = driver.find_elements(By.XPATH,"//div[@class='JobsList_wrapper__wgimi']//ul/li[@class='JobsList_jobListItem__JBBUV']")
                        
                 for card in job_cards:
                     
@@ -80,7 +80,7 @@ def get_jobs(keyword, num_pages, path):
 
                     # Expands the Description section by clicking on Show More
                     try:
-                        driver.find_element(By.XPATH, "//div[@class='css-t3xrds e856ufb4']").click()
+                        driver.find_element(By.XPATH, "//button[@class='JobDetails_showMore__j5Z_h']").click()
                         time.sleep(1)
                     except:
                         time.sleep(1)
@@ -160,13 +160,21 @@ def get_jobs(keyword, num_pages, path):
                         pass
 
                     done = True
+
+                    # Closes the signup pop-up
+                    try:
+                        driver.find_element(By.XPATH,".//button[@class='e1jbctw80 ei0fd8p1 css-1n14mz9 e1q8sty40']").click()
+                        time.sleep(2)
+                    except NoSuchElementException:
+                        time.sleep(2)
+                        pass
             except:
                 pass
                     
             # Moves to the next page         
             if done:
                 print(str(current_page) + ' ' + 'out of' +' '+ str(num_pages) + ' ' + 'pages done')
-                driver.find_element(By.XPATH,"//button[@class='nextButton job-search-opoz2d e13qs2072']").click()   
+                driver.find_element(By.XPATH,"//button[@class='button_Button__meEg5 button-base_Button__9SPjH']").click()   
                 current_page = current_page + 1
                 time.sleep(3)
             

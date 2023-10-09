@@ -23,11 +23,11 @@ blocks:
   has_callback: false
   language: python
   name: extract_data_raw
-  status: executed
+  status: updated
   type: data_loader
   upstream_blocks: []
   uuid: extract_data_raw
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
@@ -37,13 +37,13 @@ blocks:
   has_callback: false
   language: python
   name: transform_data
-  status: executed
+  status: updated
   type: transformer
   upstream_blocks:
   - extract_data_raw
   - extract_data_cleaned
   uuid: transform_data
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks: []
@@ -66,6 +66,6 @@ executor_type: null
 extensions: {}
 name: Glassdoor-dataeng-pipeline
 type: python
-updated_at: '2023-05-26 17:59:23'
+updated_at: '2023-10-09 23:06:46'
 uuid: glassdoor_dataeng_pipeline
 widgets: []

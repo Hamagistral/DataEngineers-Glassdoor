@@ -40,7 +40,6 @@ def filtered_keywords(tools, keywords, head=10):
 
     st.altair_chart(bar_chart, use_container_width=True)
 
-
 @st.cache_resource
 def load_data():
 
@@ -50,7 +49,7 @@ def load_data():
     body = obj.get()['Body']
     df = pd.read_csv(body)
         
-    cols = ['job_languages', 'job_cloud', 'job_viz', 'job_databases', 'job_bigdata', 'job_devops']
+    cols = ['job_languages', 'job_cloud', 'job_viz', 'job_databases', 'job_bigdata', 'job_datatools', 'job_devops']
 
     def safe_eval(x):
         try:
@@ -65,12 +64,13 @@ def load_data():
 df = load_data()
 
 # Data Engineering Skills
-prog_languages = ['python', 'java', 'scala', 'go', 'r', 'c++', 'c#', 'sql', 'nosql', 'rust', 'shell']
-cloud_tools = ['aws', 'azure', 'gcp', 'snowflake', 'databricks', 'redshift']
+prog_languages = ['python', 'java', 'scala', 'go', 'r', 'c', 'c++', 'c#', 'sql', 'rust', 'bash']
+cloud_tools = ['aws', 'azure', 'gcp']
 viz_tools = ['power bi', 'tableau', 'excel', 'ssis', 'qlik', 'sap', 'looker']
-databases = ['sql server', 'postgresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'dbt']
-big_data = ['spark', 'hadoop', 'kafka', 'flink']
-devops = ['gitlab', 'terraform', 'docker', 'bash', 'ansible']
+databases = ['sql server', 'nosql', 'postgresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'databricks', 'redshift']
+big_data = ['spark', 'hadoop', 'flink']
+data_tools = ['airflow', 'kafka', 'dbt']
+devops = ['gitlab', 'terraform', 'kubernetes', 'docker', 'jenkins', 'ansible']
 
 def show_explore_page():
 
@@ -82,7 +82,7 @@ def show_explore_page():
     # Data Engineering Skills
     st.markdown("#### 🛠️ Top Skills for Data Engineers")
 
-    type = st.radio("Skills :", ('Languages', 'Cloud', 'Visualization', 'Databases', 'Big Data', 'Dev Ops'), horizontal=True)
+    type = st.radio("Skills :", ('Languages', 'Cloud', 'Visualization', 'Databases', 'Big Data', 'Data Tools', 'Dev Ops'), horizontal=True)
 
     if type == "Languages":
         data = df['job_languages']
@@ -102,6 +102,9 @@ def show_explore_page():
     elif type == "Dev Ops":
         data = df['job_devops']
         tools = devops
+    elif type == "Data Tools":
+        data = df['job_datatools']
+        tools = data_tools
 
     filtered_keywords(data, tools)
 

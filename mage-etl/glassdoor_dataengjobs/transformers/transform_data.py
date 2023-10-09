@@ -8,12 +8,13 @@ import numpy as np
 import datetime
 import re
 
-prog_languages = ['python', 'java', 'scala', 'go', 'r', 'c++', 'c#', 'sql', 'nosql', 'rust', 'shell']
-cloud_tools = ['aws', 'azure', 'google cloud']
+prog_languages = ['python', 'java', 'scala', 'go', 'r', 'c', 'c++', 'c#', 'sql', 'rust', 'bash']
+cloud_tools = ['aws', 'azure', 'gcp']
 viz_tools = ['power bi', 'tableau', 'excel', 'ssis', 'qlik', 'sap', 'looker']
-databases = ['sql server', 'postgresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'dbt', 'databricks', 'redshift', 'snowflake']
-big_data = ['spark', 'hadoop', 'kafka', 'flink']
-devops = ['gitlab', 'terraform', 'docker', 'kubernetes', 'ansible']
+databases = ['sql server', 'nosql', 'postgresql', 'mongodb', 'mysql', 'oracle', 'casandra', 'elasticsearch', 'dynamodb', 'snowflake', 'redis', 'neo4j', 'hive', 'databricks', 'redshift']
+big_data = ['spark', 'hadoop', 'flink']
+data_tools = ['airflow', 'kafka', 'dbt']
+devops = ['gitlab', 'terraform', 'kubernetes', 'docker', 'jenkins', 'ansible']
 
 education = ['associate', 'bachelor', 'master', 'phd']
 
@@ -146,6 +147,7 @@ def transform(data, data_2, *args, **kwargs):
     df['job_viz'] = df['job_description'].apply(lambda x: extract_keywords(x, viz_tools))
     df['job_databases'] = df['job_description'].apply(lambda x: extract_keywords(x, databases))
     df['job_bigdata'] = df['job_description'].apply(lambda x: extract_keywords(x, big_data))
+    df['job_datatools'] = df['job_description'].apply(lambda x: extract_keywords(x, data_tools))
     df['job_devops'] = df['job_description'].apply(lambda x: extract_keywords(x, devops))
 
     df['job_education'] = df['job_description'].apply(lambda x: extract_degree(x, education))
@@ -157,11 +159,12 @@ def transform(data, data_2, *args, **kwargs):
 
     data = pd.concat([df, data_2], axis=0, join="outer")
 
-    data = data[data['salary_estimate'] <= 175000]
+    data = data[data['salary_estimate'] <= 200000]
 
     data = data.drop_duplicates(subset=['job_description'])
 
     print(data.shape)
+    print(data['job_datatools'].isnull().sum())
     return data
 
 
