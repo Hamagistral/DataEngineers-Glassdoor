@@ -25,20 +25,21 @@
 ## 📝 Table of Contents
 
 1. [ Project Overview ](#introduction)
-2. [ References ](#refs)
-3. [ Project Architecture ](#arch)
-4. [ Web Scrapinng ](#webscraping)
-5. [ Data Cleaning, EDA and Model Building](#dataedamodel)
-6. [ Installation ](#installation)
+2. [ Project Architecture ](#arch)
+3. [ Web Scrapinng ](#webscraping)
+4. [ Data Cleaning, EDA and Model Building](#dataedamodel)
+5. [ Installation ](#installation)
+6. [ References ](#refs)
 7. [ Contact ](#contact)
 <hr>
 
 ### 🕵️ Data Exploration Page
-![image](https://user-images.githubusercontent.com/66017329/223897683-bbc5ebb9-abd4-48db-86ea-3127ad2cc2e2.png)
+![image](https://github.com/Hamagistral/DataEngineers-Glassdoor/assets/66017329/3156c441-3b9e-4ab9-9f37-0a9ebc596d92)
+
 
 ### 💸 Salary Prediction Page
+![image](https://github.com/Hamagistral/DataEngineers-Glassdoor/assets/66017329/fde4a263-e1ad-454a-b658-aff30745362f)
 
-![image](https://user-images.githubusercontent.com/66017329/223897830-beaf5abc-526e-48ee-b07b-bc7a0034ca4a.png)
 
 <a name="introduction"></a>
 ## 🔬 Project Overview :
@@ -56,15 +57,6 @@ Exploratory data analysis (EDA) is performed on the cleaned data to gain insight
 After EDA, feature engineering is performed to create new features that may improve the accuracy of the salary prediction model. This includes creating dummy variables for categorical features such as location, education level, and seniority.
 
 The salary prediction model is built using a random forest regressor. Finally, the model is deployed in a web application using Streamlit, allowing users to input their own data and receive a salary prediction based on the model.
-
-<a name="refs"></a>
-## 📋 References
-
-**Project inspired by**: https://github.com/PlayingNumbers/ds_salary_proj  
-**Scraper Github:** https://github.com/arapfaik/scraping-glassdoor-selenium  
-**Scraper Article:** https://towardsdatascience.com/selenium-tutorial-scraping-glassdoor-com-in-10-minutes-3d0915c6d905  
-**Mage ETL inspired by**: https://youtu.be/WpQECq5Hx9g  
-**Streamlit App inspired by**: https://youtu.be/xl0N7tHiwlw
 
 <a name="arch"></a>
 ## 📝 Project Architecture
@@ -145,6 +137,15 @@ cd streamlit
 ```
 streamlit run 01_🕵️_Explore_Data.py
 ```
+
+<a name="refs"></a>
+## 📋 References
+
+**Project inspired by**: https://github.com/PlayingNumbers/ds_salary_proj  
+**Scraper Github:** https://github.com/arapfaik/scraping-glassdoor-selenium  
+**Scraper Article:** https://towardsdatascience.com/selenium-tutorial-scraping-glassdoor-com-in-10-minutes-3d0915c6d905  
+**Mage ETL inspired by**: https://youtu.be/WpQECq5Hx9g  
+**Streamlit App inspired by**: https://youtu.be/xl0N7tHiwlw
 
 <a name="contact"></a>
 ## 📨 Contact Me
