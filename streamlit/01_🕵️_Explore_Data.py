@@ -73,7 +73,8 @@ data_tools = ['airflow', 'kafka', 'dbt']
 devops = ['gitlab', 'terraform', 'kubernetes', 'docker', 'jenkins', 'ansible']
 
 def show_explore_page():
-
+    st.write("#")
+    
     st.header("🕵️ Exploring Data Engineer Jobs")
     st.write(f":blue[{len(df)} jobs analyzed from Glassdoor USA]")
 
